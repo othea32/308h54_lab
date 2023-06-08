@@ -394,7 +394,7 @@ console.log(user);
 // C. Adding keys and values
 // You have decided to add your user's location to the data that you want to collect.
 // Without changing the original user object, add a new key location to the object, and give it a value or some-or-other location (a string).
-user.location = "Denver";
+user.location = "Seattle";
 console.log(user);
 
 // D. Shopaholic!
@@ -412,6 +412,88 @@ console.log(user);
 
 // Console.log just the "Merino jodhpurs" from the purchased array.
 console.log(user.purchased[2]);
+
+// E. Object within an object
+user.friend = {
+ name: "Grace Hopper",
+ age: 85
+}
+console.log(user);
+
+// Without changing the original user object, add a new property friend with a value of the object you just created.
+user.friend = {
+ name: "Ayla Banks",
+ age: 25,
+ location: "Seattle",
+ purchased: []
+}
+console.log(user);
+console.log(user.location);
+
+// Change the friend's age to 55.
+user.friend.age = 55;
+console.log(user);
+
+// The friend has purchased "The One Ring". Use .push() to add "The One Ring" to the friend's purchased array.
+user.friend.purchased.push("The One Ring");
+console.log(user);
+
+// The friend has purchased "A latte". Use .push() to add "A latte" to the friend's purchased array.
+user.friend.purchased.push("A latte");
+console.log(user);
+
+// Console.log just "A latte" from the friend's purchased array.
+console.log(user.friend.purchased[1]);
+
+// F. Loops
+// Write a for loop that iterates over the User's purchased array (NOT the friend's purchased array), and prints each element to the console.
+for (let i = 0; i < user.purchased; i++) {
+  console.log(user.purchased[i]);
+}
+
+// Write a for loop that iterates over the Friend's purchased array, and prints each element to the console.
+for (let i = 0; i < user.friend.purchased; i++) {
+  console.log(user.friend.purchased[i]);
+}
+
+// G. Functions can operate on objects
+// Write a single function updateUser that takes no parameters. When the function is run, it should:
+// 1. increment the user's age by 1
+// 2. make the user's name uppercase
+
+const updateUser = () => {
+  user.age++;
+  user.name = user.name.toUpperCase();
+}
+updateUser();
+console.log(user);
+
+
+// Write a function oldAndLoud that performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our user object, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoud function with user as the argument
+const oldAndLoud = (person) => {
+  person.age++;
+  person.name = person.name.toUpperCase();
+}
+oldAndLoud(user);
+console.log(user);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
